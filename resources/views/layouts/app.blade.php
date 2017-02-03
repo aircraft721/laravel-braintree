@@ -46,6 +46,10 @@
                         &nbsp;
                     </ul>
 
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="{{ url('/plans') }}">Plans</a></li>
+                    </ul>
+                    <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
