@@ -19,7 +19,7 @@
                                         @endif
                                     </div>
 
-                                    <a href="#" class="btn btn-default pull-right">Choose Plan</a>
+                                    <a href="{{ url('/plan', $plan->slug) }}" class="btn btn-default pull-right">Choose Plan</a>
 
                                 </li>
                             @endforeach

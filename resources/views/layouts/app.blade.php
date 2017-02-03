@@ -87,5 +87,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+
+    @yield('braintree')
 </body>
 </html>
