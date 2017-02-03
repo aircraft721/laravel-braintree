@@ -18,7 +18,7 @@ class AddBillableColumnsToUsersTable extends Migration
             $table->string('paypal_email')->nullable();
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();
-            $table->timestramp('trial_ends_at')->nullable();
+            $table->timestamp('trial_ends_at')->nullable();
         });
     }
 
