@@ -4,6 +4,10 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
+use Braintree_Plan;
+
+use App\Plan;
+
 class SyncPlans extends Command
 {
     /**
@@ -37,6 +41,18 @@ class SyncPlans extends Command
      */
     public function handle()
     {
-        //
+        Plan::truncate();
+
+        $braintreePlans = Braintree_Plan::all();
+
+        foreach ($braintreePlans as $braintreePlan) {
+            Plan::create([
+               'name'=>$braintreePlan->name,
+                'slug'=>str_slug($braintreePlan->id),
+                'braintree_plan'=>$braintreePlan->id,
+                'cost'=>$braintreePlan->price,
+                'description'=>$braintreePlan->description,
+            ]);
+        }
     }
 }
