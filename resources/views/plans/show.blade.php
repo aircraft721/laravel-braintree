@@ -11,7 +11,7 @@
                             <div id="dropin-container"></div>
                             <hr>
 
-                            <button id="payment-button" class="btn btn-primary btn-flat" type="submit">Pay now</button>
+                            <button id="payment-button" class="btn btn-primary btn-flat hidden" type="submit">Pay now</button>
                         </form>
                     </div>
                 </div>
