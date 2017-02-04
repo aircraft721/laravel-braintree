@@ -37,3 +37,8 @@ Route::group(['middleware'=>'auth'], function(){
         Route::get('/prolessons','LessonsController@premium');
     });
 });
+
+Route::post(
+    'braintree/webhooks',
+    '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
+);

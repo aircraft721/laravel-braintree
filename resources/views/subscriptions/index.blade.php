@@ -18,7 +18,7 @@
                             </form>
 
 
-                        @else
+                        @endif
                     </div>
 
                     <div class="panel-body">
