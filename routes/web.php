@@ -25,4 +25,5 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/plan/{plan}', 'PlansController@show');
     Route::get('/braintree/token', 'BraintreeTokenController@token');
     Route::post('/subscribe', 'SubscriptionsController@store');
+    Route::get('/lessons','LessonsController@index');
 });
