@@ -32,4 +32,10 @@ class SubscriptionsController extends Controller
 
         return redirect()->back()->with('success',' You have successfully cancelled your subscription');
     }
+
+    public function resume(Request $request){
+        $request->user()->subscription('main')->resume();
+
+        return redirect()->back()->with('success',' You have successfully cancelled your subscription');
+    }
 }

@@ -30,6 +30,8 @@ Route::group(['middleware'=>'auth'], function(){
         Route::get('/lessons','LessonsController@index');
         Route::get('/subscriptions','SubscriptionsController@index');
         Route::get('/subscriptions/cancel', 'SubscriptionsController@cancel');
+        Route::get('/subscriptions/resume', 'SubscriptionsController@resume');
+
     });
     Route::group(['middleware'=>'premium-subscribed'], function(){
         Route::get('/prolessons','LessonsController@premium');
