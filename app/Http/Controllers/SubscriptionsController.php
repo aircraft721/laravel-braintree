@@ -13,8 +13,13 @@ class SubscriptionsController extends Controller
             return redirect('home')->with('error', 'Unauthorised operation');
         }
 
+        if (!$request->user()->subscribed('main')) {
         $request->user()->newSubscription('main', $plan->braintree_plan)->create($request->payment_method_nonce);
+        } else {
+            $request->user()->subscription('main')->swap($plan->braintree_plan);
+        }
 
-        return redirect('home');
+
+        return redirect('home')->with('success', 'Subscribed to '. $plan->braintree_plan .' successfully');
     }
 }
