@@ -22,4 +22,14 @@ class SubscriptionsController extends Controller
 
         return redirect('home')->with('success', 'Subscribed to '. $plan->braintree_plan .' successfully');
     }
+
+    public function index(){
+        return view('subscriptions.index');
+    }
+
+    public function cancel(Request $request){
+        $request->user()->subscription('main')->cancel();
+
+        return redirect()->back()->with('success',' You have successfully cancelled your subscription');
+    }
 }

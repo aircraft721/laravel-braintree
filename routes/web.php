@@ -28,6 +28,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/lessons','LessonsController@index');
     Route::group(['middleware'=>'subscribed'], function(){
         Route::get('/lessons','LessonsController@index');
+        Route::get('/subscriptions','SubscriptionsController@index');
+        Route::get('/subscriptions/cancel', 'SubscriptionsController@cancel');
     });
     Route::group(['middleware'=>'premium-subscribed'], function(){
         Route::get('/prolessons','LessonsController@premium');

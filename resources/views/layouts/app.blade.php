@@ -76,6 +76,13 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        @if(Auth::user()->subscribed('main'))
+                                            <a href="{{ url('/subscriptions') }}">
+                                                Manage subscriptions
+                                            </a>
+                                            @endif
+                                    </li>
                                 </ul>
                             </li>
                         @endif
