@@ -26,4 +26,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/braintree/token', 'BraintreeTokenController@token');
     Route::post('/subscribe', 'SubscriptionsController@store');
     Route::get('/lessons','LessonsController@index');
+    Route::group(['middleware'=>'subscribed'], function(){
+        Route::get('/lessons','LessonsController@index');
+    });
+    Route::group(['middleware'=>'premium-subscribed'], function(){
+        Route::get('/prolessons','LessonsController@premium');
+    });
 });
